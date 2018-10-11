@@ -1,0 +1,13 @@
+box: python:3.5
+dev:
+  steps:
+    - install-packages:
+        packages: nodejs npm
+    - script:
+        name: node symlink
+        code: ln -s /usr/bin/nodejs /usr/bin/node
+    - script:
+        name: install bower
+        code: npm install -g bower
+    - internal/shell
+        cmd: /bin/bash
